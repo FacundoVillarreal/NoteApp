@@ -1,3 +1,9 @@
+<style>
+    footer{
+       display: none;
+    }
+</style>
+
 <div class="row">
     {{#each notes}}
     <div class="col-md-4 mb-4 my-100">
@@ -18,14 +24,22 @@
             </div>
         </div>
     </div>
+   
     {{else}}
         <div class="card mx-auto">
             <div class="card-body">
             <h1>Hola {{name}}</h1>
                 <p class="lead">Aun no hay notas</p>
-                <a href="/notes/add" class="btn btn-success btn-block">Cree una</a>
+                <a href="/notes/add" class="btn btn-success btn-block "> Cree una</a>
             </div>
         </div>
     {{/each}}
 </div>
 
+{{#if notes}}
+<div class="row justify-content-center ">
+    <h4 class="card-title">
+        <a href="/notes/add" class="text-primary"><i class="fas fa-plus"></i></a> 
+    </h4>
+</div>
+{{/if}}
