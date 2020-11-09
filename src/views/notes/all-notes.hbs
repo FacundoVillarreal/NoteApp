@@ -1,6 +1,6 @@
 <style>
-    footer{
-       display: none;
+    footer {
+        display: none;
     }
 </style>
 
@@ -15,31 +15,64 @@
                 <p>
                     {{description}}
                 </p>
-                    <form action="/notes/delete-note/{{_id}}?_method=DELETE" method="POST">
+                <form action="/notes/delete-note/{{_id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <button class="btn btn-danger btn-block btn-sm " type="submit">
                         Borrar
                     </button>
-                    </form>
+                </form>
             </div>
         </div>
     </div>
-   
+
     {{else}}
-        <div class="card mx-auto">
-            <div class="card-body">
+    <div class="card mx-auto">
+        <div class="card-body">
             <h1>Hola {{name}}</h1>
-                <p class="lead">Aun no hay notas</p>
-                <a href="/notes/add" class="btn btn-success btn-block "> Cree una</a>
-            </div>
+            <p class="lead">Aun no hay notas</p>
+            <a href="/notes/add" class="btn btn-success btn-block "> Cree una</a>
         </div>
+    </div>
     {{/each}}
 </div>
 
 {{#if notes}}
-<div class="row justify-content-center ">
-    <h4 class="card-title">
-        <a href="/notes/add" class="text-primary"><i class="fas fa-plus"></i></a> 
-    </h4>
+
+<div class="row justify-content-center">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal1" data-whatever="@mdo"><i
+            class="fas fa-plus"></i></button>
+    <div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <form action="/notes/new-note" method="POST" required="required">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Nueva nota</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form >
+                            <div class="form-group">
+                                <label for="recipient-name" class="col-form-label">Titulo:</label>
+                                <input type="text" name="title" class="form-control" id="recipient-name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message-text" class="col-form-label">Descripción:</label>
+                                <textarea class="form-control" name="description" id="message-text" required></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+
+
 </div>
 {{/if}}

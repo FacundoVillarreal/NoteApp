@@ -9,9 +9,9 @@ BACK-END
 
 3-npm i express-handlebars: motor de plantillas
 
-4-npm i express-session: Se utiliza para crear sesiones dentro del servidor , es decir, cuando el usuario se autentique el va a insertar sus datos, su contrase�a y su usuario, pero luego cuando visita otra pagina no queremos que se vuelva a autenticar, es por eso que vamos a almacenar temporalmente sus datos en una sesion.
+4-npm i express-session: Se utiliza para crear sesiones dentro del servidor , es decir, cuando el usuario se autentique el va a insertar sus datos, su contraseña y su usuario, pero luego cuando visita otra pagina no queremos que se vuelva a autenticar, es por eso que vamos a almacenar temporalmente sus datos en una sesion.
 
-5-npm i method-override: Este metodo es para poder extender la funcionalidad de los formularios. Por lo general los formularios te permiten enviar metodos post y metodos get, pero existen otros metodos como el put y delete, que se envian a traves de metodos ajax o js pero los formularios no puede hacer eso, es por eso que vamos a utilizar metodos override para utilizar un hack o un peque�o truco para que el formulario pueda enviar metodos put y metodos delete tambien.
+5-npm i method-override: Este metodo es para poder extender la funcionalidad de los formularios. Por lo general los formularios te permiten enviar metodos post y metodos get, pero existen otros metodos como el put y delete, que se envian a traves de metodos ajax o js pero los formularios no puede hacer eso, es por eso que vamos a utilizar metodos override para utilizar un hack o un pequeño truco para que el formulario pueda enviar metodos put y metodos delete tambien.
 
 5- npm i mongoose: modulo que nos permite unir express con una base de datos; mongoose me permite conectarnos con mongodb, es tan solo el modulo de conexion
 
