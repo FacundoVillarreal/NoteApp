@@ -6,8 +6,6 @@ const methodOverride = require("method-override");
 const flash = require("connect-flash");
 const passport = require("passport");
 
-
-
 // Initiliazations
 const app = express();
 require("./database");
