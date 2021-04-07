@@ -2,16 +2,16 @@
     <div class="mx-auto">
         <div class="card mt-4 text-center">
             <div class="card-header">
-                <h1>Notes App</h1>
+                <h1>NoteApp</h1>
             </div>
             <img src="/img/note3.png" class="logo rounded-circle mx-auto d-block m-4" alt="logo">
             <div class="card-body">
-                <form action="/users/signin" method="POST">
+                <form action="/users/signin" method="POST" aria-required="true">
                     <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Correo electronico" autofocus>
+                        <input type="email" class="form-control" name="email" placeholder="Correo electronico" autofocus required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña" autofocus>
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" autofocus required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
