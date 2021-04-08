@@ -8,14 +8,29 @@
             <div class="card-body">
                 <form action="/users/signin" method="POST" aria-required="true">
                     <div class="form-group">
-                        <input type="email" class="form-control" name="email" placeholder="Correo electronico" autofocus required>
+                        <input type="email" class="form-control" name="email" placeholder="Correo electronico" autofocus
+                            required>
                     </div>
                     <div class="form-group">
-                        <input type="password" class="form-control" name="password" placeholder="Contraseña" autofocus required>
+                        <input type="password" class="form-control" name="password" placeholder="Contraseña" autofocus
+                            required>
                     </div>
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary btn-block">Iniciar sesion</button>
+                        <button type="submit" class="btn btn-primary btn-block mb-0">Iniciar sesión</button>
+                        <div class="row lineas d-flex align-item-center no-wrap">
+                            <div class="col-5 izquierda">
+                                <hr style="border-bottom: 1px solid #212529">
+                            </div>
+                            <div class="col-2 centro align-item-center mt-1">O</div>
+                            <div class="col-5 derecha">
+                                <hr style="border-bottom: 1px solid #212529">
+                            </div>
+                        </div>
+
+                        <a href="users/signup" class="btn btn-primary btn-block" style="letter-spacing: normal;">Regístrate</a>
+
                     </div>
+
                 </form>
             </div>
         </div>
