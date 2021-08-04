@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+require('dotenv').config();
+const client = require('twilio')(process.env.TWILIO_ACCOUNT_SID, process.env.TWILIO_TOKEN);
 
 const Note = require("../models/Notes");
 const { isAuthenticated } = require("../helpers/auth");
@@ -75,4 +77,21 @@ router.delete("/notes/delete-note/:id", isAuthenticated, async (req, res) => {
   res.redirect("/notes");
 });
 
+function enviarMensaje(mensaje){
+  client.messages.create({
+    from: 'whatsapp:+14155238886',
+    body: mensaje,
+    to: 'whatsapp:+5493517518362'
+  }).then(message => console.log(message.sid));
+};
+
+/* Enviar por wapp */
+router.get("/notes/send/:id", isAuthenticated, async (req, res) => {
+  const note = await Note.findById(req.params.id);
+  let titulo = new String( note.title).toString();
+  let mensaje = new String(note.description).toString();
+
+  res.send(enviarMensaje('Titulo de la nota: '+ titulo +'\n Descripción: ' + mensaje ));
+  res.redirect("/notes");
+});
 module.exports = router;
