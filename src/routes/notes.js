@@ -91,7 +91,7 @@ router.get("/notes/send/:id", isAuthenticated, async (req, res) => {
   let titulo = new String( note.title).toString();
   let mensaje = new String(note.description).toString();
 
-  res.send(enviarMensaje('Titulo de la nota: '+ titulo +'\n Descripción: ' + mensaje ));
+  enviarMensaje('Titulo de la nota: '+ titulo +'\n Descripción: ' + mensaje );
   res.redirect("/notes");
 });
 module.exports = router;
